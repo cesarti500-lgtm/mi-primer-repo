@@ -1,0 +1,82 @@
+USE master;
+GO
+
+-- 1. Validar y eliminar existencia previa
+IF DB_ID('BD_FARMACIA') IS NOT NULL
+BEGIN
+    ALTER DATABASE BD_FARMACIA SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE BD_FARMACIA;
+END;
+GO
+
+-- 2. Creación con archivos físicos
+CREATE DATABASE BD_FARMACIA
+ON PRIMARY
+(
+    NAME       = BD_FARMACIA_PRI,
+    FILENAME   = 'D:\FARMACIA\DATA\BD_FARMACIA_PRI.mdf',
+    SIZE       = 30MB,
+    MAXSIZE    = UNLIMITED,
+    FILEGROWTH = 12%
+),
+(
+    NAME       = BD_FARMACIA_SEC,
+    FILENAME   = 'D:\FARMACIA\SEC\BD_FARMACIA_SEC.ndf',
+    SIZE       = 25MB,
+    MAXSIZE    = 150MB,
+    FILEGROWTH = 8MB
+)
+LOG ON
+(
+    NAME       = BD_FARMACIA_TRA,
+    FILENAME   = 'D:\FARMACIA\TRANS\BD_FARMACIA_TRA.ldf',
+    SIZE       = 15MB,
+    MAXSIZE    = 200MB,
+    FILEGROWTH = 8MB
+);
+GO
+
+-- 3. Modificaciones al archivo de transacciones
+ALTER DATABASE BD_FARMACIA
+MODIFY FILE
+(
+    NAME       = BD_FARMACIA_TRA,
+    SIZE       = 20MB,
+    FILEGROWTH = 15%
+);
+GO
+
+-- 4. Agregar tres archivos secundarios
+ALTER DATABASE BD_FARMACIA
+ADD FILE
+(
+    NAME       = BD_FARMACIA_SEC1,
+    FILENAME   = 'D:\FARMACIA\SEC\BD_FARMACIA_SEC1.ndf',
+    SIZE       = 10MB,
+    MAXSIZE    = 100MB,
+    FILEGROWTH = 10%
+),
+(
+    NAME       = BD_FARMACIA_SEC2,
+    FILENAME   = 'D:\FARMACIA\SEC\BD_FARMACIA_SEC2.ndf',
+    SIZE       = 10MB,
+    MAXSIZE    = 100MB,
+    FILEGROWTH = 10%
+),
+(
+    NAME       = BD_FARMACIA_SEC3,
+    FILENAME   = 'D:\FARMACIA\SEC\BD_FARMACIA_SEC3.ndf',
+    SIZE       = 10MB,
+    MAXSIZE    = 100MB,
+    FILEGROWTH = 10%
+);
+GO
+
+-- 5. Eliminar archivo secundario BD_FARMACIA_SEC1
+ALTER DATABASE BD_FARMACIA
+REMOVE FILE BD_FARMACIA_SEC1;
+GO
+
+-- 6. Verificación de archivos
+EXEC sp_helpdb 'BD_FARMACIA';
+GO

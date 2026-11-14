@@ -1,0 +1,162 @@
+USE master;
+GO
+
+-- 1. Validar y crear la base de datos
+IF DB_ID('BD_RESERVAVUELOS') IS NOT NULL
+BEGIN
+    ALTER DATABASE BD_RESERVAVUELOS SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE BD_RESERVAVUELOS;
+END;
+GO
+
+CREATE DATABASE BD_RESERVAVUELOS;
+GO
+
+USE BD_RESERVAVUELOS;
+GO
+
+-- 2. Creación de tablas
+CREATE TABLE PAIS
+(
+    idpais CHAR(3)      NOT NULL,
+    nombre VARCHAR(40)  NOT NULL
+);
+GO
+
+CREATE TABLE PASAJERO
+(
+    idpasajero       CHAR(6)     NOT NULL,
+    nombre           VARCHAR(30) NOT NULL,
+    apaterno         VARCHAR(30) NOT NULL,
+    amaterno         VARCHAR(30) NOT NULL,
+    tipo_documento   VARCHAR(15) NOT NULL,
+    num_documento    VARCHAR(15) NOT NULL,
+    fecha_nacimiento DATE        NOT NULL,
+    idpais           CHAR(3)     NOT NULL,
+    telefono         VARCHAR(15) NULL,
+    email            VARCHAR(50) NULL,
+    clave            VARCHAR(32) NOT NULL
+);
+GO
+
+CREATE TABLE AEROPUERTO
+(
+    idaeropuerto CHAR(3)     NOT NULL,
+    nombre       VARCHAR(50) NOT NULL,
+    idpais       CHAR(3)     NOT NULL
+);
+GO
+
+CREATE TABLE AEROLINEA
+(
+    idaerolinea CHAR(3)     NOT NULL,
+    ruc         CHAR(11)    NOT NULL,
+    nombre      VARCHAR(50) NOT NULL
+);
+GO
+
+CREATE TABLE AVION
+(
+    idavion     CHAR(5)     NOT NULL,
+    idaerolinea CHAR(3)     NOT NULL,
+    fabricante  VARCHAR(30) NOT NULL,
+    tipo        VARCHAR(30) NOT NULL,
+    capacidad   INT         NOT NULL
+);
+GO
+
+CREATE TABLE ASIENTO
+(
+    idasiento CHAR(4) NOT NULL,
+    letra     CHAR(1) NOT NULL,
+    fila      INT     NOT NULL
+);
+GO
+
+CREATE TABLE TARIFA
+(
+    idtarifa CHAR(4)        NOT NULL,
+    clase    VARCHAR(20)    NOT NULL,
+    precio   DECIMAL(10, 2) NOT NULL,
+    impuesto DECIMAL(10, 2) NOT NULL
+);
+GO
+
+CREATE TABLE VUELO
+(
+    idasiento    CHAR(4) NOT NULL,
+    idaeropuerto CHAR(3) NOT NULL,
+    idreserva    CHAR(8) NOT NULL,
+    idavion      CHAR(5) NOT NULL,
+    idtarifa     CHAR(4) NOT NULL
+);
+GO
+
+-- 3. Agregar Llaves Primarias (ADD PRIMARY KEY)
+ALTER TABLE PAIS
+ADD CONSTRAINT PK_PAIS PRIMARY KEY (idpais);
+GO
+
+ALTER TABLE PASAJERO
+ADD CONSTRAINT PK_PASAJERO PRIMARY KEY (idpasajero);
+GO
+
+ALTER TABLE AEROPUERTO
+ADD CONSTRAINT PK_AEROPUERTO PRIMARY KEY (idaeropuerto);
+GO
+
+ALTER TABLE AEROLINEA
+ADD CONSTRAINT PK_AEROLINEA PRIMARY KEY (idaerolinea);
+GO
+
+ALTER TABLE AVION
+ADD CONSTRAINT PK_AVION PRIMARY KEY (idavion);
+GO
+
+ALTER TABLE ASIENTO
+ADD CONSTRAINT PK_ASIENTO PRIMARY KEY (idasiento);
+GO
+
+ALTER TABLE TARIFA
+ADD CONSTRAINT PK_TARIFA PRIMARY KEY (idtarifa);
+GO
+
+ALTER TABLE VUELO
+ADD CONSTRAINT PK_VUELO PRIMARY KEY (idasiento, idaeropuerto, idreserva);
+GO
+
+-- 4. Agregar Llaves Foráneas (ADD FOREIGN KEY REFERENCES)
+ALTER TABLE PASAJERO
+ADD CONSTRAINT FK_PASAJERO_PAIS 
+FOREIGN KEY (idpais) REFERENCES PAIS(idpais);
+GO
+
+ALTER TABLE AEROPUERTO
+ADD CONSTRAINT FK_AEROPUERTO_PAIS 
+FOREIGN KEY (idpais) REFERENCES PAIS(idpais);
+GO
+
+ALTER TABLE AVION
+ADD CONSTRAINT FK_AVION_AEROLINEA 
+FOREIGN KEY (idaerolinea) REFERENCES AEROLINEA(idaerolinea);
+GO
+
+ALTER TABLE VUELO
+ADD CONSTRAINT FK_VUELO_ASIENTO 
+FOREIGN KEY (idasiento) REFERENCES ASIENTO(idasiento);
+GO
+
+ALTER TABLE VUELO
+ADD CONSTRAINT FK_VUELO_AEROPUERTO 
+FOREIGN KEY (idaeropuerto) REFERENCES AEROPUERTO(idaeropuerto);
+GO
+
+ALTER TABLE VUELO
+ADD CONSTRAINT FK_VUELO_AVION 
+FOREIGN KEY (idavion) REFERENCES AVION(idavion);
+GO
+
+ALTER TABLE VUELO
+ADD CONSTRAINT FK_VUELO_TARIFA 
+FOREIGN KEY (idtarifa) REFERENCES TARIFA(idtarifa);
+GO
