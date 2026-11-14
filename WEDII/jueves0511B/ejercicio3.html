@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="texto">No se me ocurre</p>
+    <button type="button" onclick="funcion1()">Texto grande</button>
+    <button type="button" onclick="funcion2()">Ocultar</button>
+    <button type="button" onclick="funcion3()">Mostrar</button>
+    <script>
+        function funcion1(){
+            document.getElementById('texto').style.fontSize='35px';
+        }
+        function funcion2(){
+            document.getElementById('texto').style.display='none';
+        }
+        function funcion3(){
+            document.getElementById('texto').style.display='block';
+        }
+    </script>
+</body>
+</html>

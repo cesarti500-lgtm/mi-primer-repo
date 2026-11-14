@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="misFunciones.js"></script>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><label for="nombre">Nombre: </label></td>
+                <td><input type="text" id="nombre" name="nombre"></td>
+            </tr>
+            <tr>
+                <td><label for="distrito">Distrito:</label></td>
+                <td>
+                    <select id="distrito" nombre="distrito">
+                        <option value="Miraflores">Miraflores</option>
+                        <option value="San Martín de Porres">San Martín de Porres</option>
+                        <option value="Los Olivos">Los Olivos</option>
+                        <option value="San Isidro">San Isidro</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="sexo">Sexo:</label></td>
+                <td>
+                    <input type="radio" id="f" name="sexo" value="Femenino" checked>Femenino
+                    <input type="radio" id="m" name="sexo" value="Masculino">Masculino
+                </td>
+            </tr>
+            <tr>
+                <td><label for="idioma">Idioma:</label></td>
+                <td>
+                    <input type="checkbox" id="ingles" name="ingles" value="Inglés" checked>Inglés
+                    <input type="checkbox" id="frances" name="frances" value="Francés">Francés
+                    <input type="checkbox" id="aleman" name="aleman" value="Alemán">Alemán
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="button" onclick="funcion1()">Procesar</button></td>
+            </tr>
+        </table>
+    </form>
+    <p id="datos"></p>
+</body>
+</html>
