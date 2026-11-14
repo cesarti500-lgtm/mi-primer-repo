@@ -1,0 +1,71 @@
+USE VENTAS2025;
+GO
+
+-- 1. Listado de boletas con datos completos del cliente y del empleado que atendió (INNER JOIN)
+SELECT 
+    B.NUM_BOLETA AS [Nro Boleta],
+    B.FECHA_EMI AS [Fecha Emisión],
+    CONCAT(C.APELLIDOS, ', ', C.NOMBRES) AS [Cliente],
+    CONCAT(E.APELLIDOS, ', ', E.NOMBRES) AS [Vendedor],
+    B.ESTADO_BOLETA AS [Estado]
+FROM BOLETA AS B
+INNER JOIN CLIENTE AS C ON B.ID_CLIENTE = C.ID_CLIENTE
+INNER JOIN EMPLEADO AS E ON B.COD_EMPLE = E.COD_EMPLE
+ORDER BY B.FECHA_EMI DESC;
+GO
+
+-- 2. Detalle valorizado de productos vendidos por boleta y categoría
+SELECT 
+    D.NUM_BOLETA AS [Nro Boleta],
+    CAT.NOMBRE AS [Categoría],
+    P.DESCRIPCION AS [Producto],
+    D.CANTIDAD AS [Cantidad],
+    P.PRECIO_VENTA AS [Precio Unitario],
+    D.IMPORTE AS [Subtotal]
+FROM DETALLEBOLETA AS D
+INNER JOIN PRODUCTO AS P ON D.ID_PRODUCTO = P.ID_PRODUCTO
+INNER JOIN CATEGORIAS AS CAT ON P.COD_CATE = CAT.COD_CATE;
+GO
+
+-- 3. Total facturado y cantidad de boletas emitidas por empleado (GROUP BY + HAVING)
+SELECT 
+    E.COD_EMPLE AS [Código],
+    CONCAT(E.APELLIDOS, ' ', E.NOMBRES) AS [Empleado],
+    CAR.NOMBRE_CARGO AS [Cargo],
+    COUNT(DISTINCT B.NUM_BOLETA) AS [Total Boletas],
+    ISNULL(SUM(D.IMPORTE), 0) AS [Monto Total Vendido]
+FROM EMPLEADO AS E
+INNER JOIN CARGOS AS CAR ON E.COD_CARGO = CAR.COD_CARGO
+LEFT JOIN BOLETA AS B ON E.COD_EMPLE = B.COD_EMPLE
+LEFT JOIN DETALLEBOLETA AS D ON B.NUM_BOLETA = D.NUM_BOLETA
+GROUP BY E.COD_EMPLE, E.APELLIDOS, E.NOMBRES, CAR.NOMBRE_CARGO
+HAVING ISNULL(SUM(D.IMPORTE), 0) > 0
+ORDER BY [Monto Total Vendido] DESC;
+GO
+
+-- 4. Distritos con mayor volumen de clientes registrados y consumo acumulado
+SELECT 
+    DIS.NOMBRE_DISTRITO AS [Distrito],
+    COUNT(DISTINCT C.ID_CLIENTE) AS [Clientes Registrados],
+    COUNT(DISTINCT B.NUM_BOLETA) AS [Compras Realizadas],
+    ISNULL(SUM(D.IMPORTE), 0) AS [Facturación Distrital]
+FROM DISTRITOS AS DIS
+LEFT JOIN CLIENTE AS C ON DIS.ID_DISTRITO = C.ID_DISTRITO
+LEFT JOIN BOLETA AS B ON C.ID_CLIENTE = B.ID_CLIENTE
+LEFT JOIN DETALLEBOLETA AS D ON B.NUM_BOLETA = D.NUM_BOLETA
+GROUP BY DIS.NOMBRE_DISTRITO
+ORDER BY [Facturación Distrital] DESC;
+GO
+
+-- 5. Productos sin movimiento de ventas (Auditoría de inventario muerto con LEFT JOIN)
+SELECT 
+    P.ID_PRODUCTO AS [Código],
+    P.DESCRIPCION AS [Producto],
+    CAT.NOMBRE AS [Categoría],
+    P.STOCK_ACTUAL AS [Stock Disponible],
+    P.PRECIO_VENTA AS [Precio]
+FROM PRODUCTO AS P
+INNER JOIN CATEGORIAS AS CAT ON P.COD_CATE = CAT.COD_CATE
+LEFT JOIN DETALLEBOLETA AS D ON P.ID_PRODUCTO = D.ID_PRODUCTO
+WHERE D.ID_PRODUCTO IS NULL;
+GO

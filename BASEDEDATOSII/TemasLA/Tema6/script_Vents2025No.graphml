@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:java="http://www.yworks.com/xml/yfiles-common/1.0/java" xmlns:sys="http://www.yworks.com/xml/yfiles-common/markup/primitives/2.0" xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
+  <key for="port" id="d0" yfiles.type="portgraphics"/>
+  <key for="port" id="d1" yfiles.type="portgeometry"/>
+  <key for="port" id="d2" yfiles.type="portuserdata"/>
+  <key attr.name="url" attr.type="string" for="node" id="d3"/>
+  <key attr.name="description" attr.type="string" for="node" id="d4"/>
+  <key for="node" id="d5" yfiles.type="nodegraphics"/>
+  <key for="graphml" id="d6" yfiles.type="resources"/>
+  <key attr.name="url" attr.type="string" for="edge" id="d7"/>
+  <key attr.name="description" attr.type="string" for="edge" id="d8"/>
+  <key for="edge" id="d9" yfiles.type="edgegraphics"/>
+  <graph edgedefault="undirected" id="G">
+
+    <!-- ENTIDADES -->
+    <node id="nv_cargo"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="40.0" width="110.0" x="50.0" y="380.0"/><y:Fill color="#3B82F6"/><y:BorderStyle color="#1D4ED8" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#FFFFFF">CARGOS</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+    <node id="nv_emp"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="42.0" width="120.0" x="45.0" y="160.0"/><y:Fill color="#3B82F6"/><y:BorderStyle color="#1D4ED8" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">EMPLEADO</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+    <node id="nv_dist"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="42.0" width="120.0" x="320.0" y="60.0"/><y:Fill color="#3B82F6"/><y:BorderStyle color="#1D4ED8" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">DISTRITOS</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+    <node id="nv_cli"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="42.0" width="120.0" x="600.0" y="160.0"/><y:Fill color="#3B82F6"/><y:BorderStyle color="#1D4ED8" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">CLIENTE</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+    <node id="nv_bol"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="42.0" width="120.0" x="320.0" y="250.0"/><y:Fill color="#3B82F6"/><y:BorderStyle color="#1D4ED8" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">BOLETA</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+    <node id="nv_pro"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="42.0" width="120.0" x="600.0" y="380.0"/><y:Fill color="#3B82F6"/><y:BorderStyle color="#1D4ED8" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">PRODUCTO</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+    <node id="nv_cat"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="40.0" width="120.0" x="850.0" y="381.0"/><y:Fill color="#3B82F6"/><y:BorderStyle color="#1D4ED8" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#FFFFFF">CATEGORIAS</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+
+    <!-- RELACIONES -->
+    <node id="rv_ocupa"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="40.0" width="76.0" x="67.0" y="270.0"/><y:Fill color="#E0E7FF"/><y:BorderStyle color="#4338CA" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">Ocupa</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+    <node id="rv_res_e"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="40.0" width="76.0" x="195.0" y="100.0"/><y:Fill color="#E0E7FF"/><y:BorderStyle color="#4338CA" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">Reside_E</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+    <node id="rv_res_c"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="40.0" width="76.0" x="490.0" y="100.0"/><y:Fill color="#E0E7FF"/><y:BorderStyle color="#4338CA" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">Reside_C</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+    <node id="rv_emite"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="40.0" width="76.0" x="200.0" y="210.0"/><y:Fill color="#E0E7FF"/><y:BorderStyle color="#4338CA" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">Emite</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+    <node id="rv_compra"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="40.0" width="76.0" x="490.0" y="210.0"/><y:Fill color="#E0E7FF"/><y:BorderStyle color="#4338CA" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">Compra</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+    <node id="rv_detalle"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="46.0" width="84.0" x="440.0" y="378.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#CA8A04" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">Detalle_Bol</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+    <node id="rv_pert"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="40.0" width="76.0" x="748.0" y="381.0"/><y:Fill color="#E0E7FF"/><y:BorderStyle color="#4338CA" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">Pertenece</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+
+    <!-- ATRIBUTOS PK Y RELACION -->
+    <node id="av_car_pk"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="75.0" x="67.5" y="450.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">COD_CARGO</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="av_emp_pk"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="75.0" x="67.5" y="95.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">COD_EMPLE</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="av_dis_pk"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="75.0" x="342.5" y="15.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">ID_DISTRITO</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="av_cli_pk"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="75.0" x="622.5" y="95.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">ID_CLIENTE</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="av_bol_pk"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="80.0" x="340.0" y="190.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">NUM_BOLETA</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="av_pro_pk"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="80.0" x="620.0" y="450.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">ID_PRODUCTO</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="av_cat_pk"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="75.0" x="872.5" y="450.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">COD_CATE</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+
+    <node id="av_det_can"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="70.0" x="447.0" y="320.0"/><y:Fill color="#FFFFFF"/><y:BorderStyle color="#64748B"/><y:NodeLabel fontFamily="Arial" fontSize="9">CANTIDAD</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="av_det_imp"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="65.0" x="449.5" y="450.0"/><y:Fill color="#FFFFFF"/><y:BorderStyle color="#64748B"/><y:NodeLabel fontFamily="Arial" fontSize="9">IMPORTE</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+
+    <!-- ARISTAS -->
+    <edge id="ev1" source="nv_cargo" target="rv_ocupa"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ev2" source="rv_ocupa" target="nv_emp"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ev3" source="nv_dist" target="rv_res_e"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ev4" source="rv_res_e" target="nv_emp"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ev5" source="nv_dist" target="rv_res_c"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ev6" source="rv_res_c" target="nv_cli"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ev7" source="nv_emp" target="rv_emite"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ev8" source="rv_emite" target="nv_bol"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ev9" source="nv_cli" target="rv_compra"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ev10" source="rv_compra" target="nv_bol"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ev11" source="nv_bol" target="rv_detalle"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ev12" source="rv_detalle" target="nv_pro"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">M</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ev13" source="nv_pro" target="rv_pert"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ev14" source="rv_pert" target="nv_cat"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+
+    <!-- CONEXIONES ATRIBUTOS -->
+    <edge id="eav1" source="nv_cargo" target="av_car_pk"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eav2" source="nv_emp" target="av_emp_pk"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eav3" source="nv_dist" target="av_dis_pk"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eav4" source="nv_cli" target="av_cli_pk"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eav5" source="nv_bol" target="av_bol_pk"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eav6" source="nv_pro" target="av_pro_pk"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eav7" source="nv_cat" target="av_cat_pk"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eav8" source="rv_detalle" target="ad_det_can"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eav9" source="rv_detalle" target="ad_det_imp"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+
+  </graph>
+  <data key="d6"><y:Resources/></data>
+</graphml>

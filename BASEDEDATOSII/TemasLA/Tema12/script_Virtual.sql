@@ -1,0 +1,102 @@
+USE master;
+GO
+
+IF DB_ID('BD_SIGED_VIRTUAL') IS NOT NULL
+    DROP DATABASE BD_SIGED_VIRTUAL;
+GO
+
+CREATE DATABASE BD_SIGED_VIRTUAL;
+GO
+
+USE BD_SIGED_VIRTUAL;
+GO
+
+-- 1. Tablas Maestras
+CREATE TABLE ROL (
+    id_rol INT IDENTITY(1,1) NOT NULL,
+    nombre_rol VARCHAR(40) NOT NULL,
+    estado BIT NOT NULL DEFAULT 1,
+    CONSTRAINT PK_ROL PRIMARY KEY (id_rol),
+    CONSTRAINT UQ_ROL_NOMBRE UNIQUE (nombre_rol)
+);
+
+CREATE TABLE AREA (
+    id_area INT IDENTITY(1,1) NOT NULL,
+    nombre_area VARCHAR(80) NOT NULL,
+    siglas VARCHAR(15) NOT NULL,
+    estado BIT NOT NULL DEFAULT 1,
+    CONSTRAINT PK_AREA PRIMARY KEY (id_area),
+    CONSTRAINT UQ_AREA_SIGLAS UNIQUE (siglas)
+);
+
+CREATE TABLE TIPO_DOCUMENTO (
+    id_tipodoc INT IDENTITY(1,1) NOT NULL,
+    nombre_tipodoc VARCHAR(60) NOT NULL,
+    plazo_dias INT NOT NULL DEFAULT 5,
+    CONSTRAINT PK_TIPO_DOCUMENTO PRIMARY KEY (id_tipodoc),
+    CONSTRAINT CK_TIPODOC_PLAZO CHECK (plazo_dias > 0)
+);
+
+CREATE TABLE SOLICITANTE (
+    id_solicitante INT IDENTITY(1,1) NOT NULL,
+    tipo_persona CHAR(1) NOT NULL, -- 'N': Natural, 'J': Jurídica
+    num_documento VARCHAR(11) NOT NULL,
+    razon_nombre VARCHAR(150) NOT NULL,
+    correo VARCHAR(100) NOT NULL,
+    telefono VARCHAR(15) NULL,
+    CONSTRAINT PK_SOLICITANTE PRIMARY KEY (id_solicitante),
+    CONSTRAINT UQ_SOLICITANTE_DOC UNIQUE (num_documento),
+    CONSTRAINT CK_SOLICITANTE_TIPO CHECK (tipo_persona IN ('N', 'J'))
+);
+
+-- 2. Tablas Operativas y Transaccionales
+CREATE TABLE USUARIO (
+    id_usuario INT IDENTITY(1,1) NOT NULL,
+    dni CHAR(8) NOT NULL,
+    nombres VARCHAR(60) NOT NULL,
+    apellidos VARCHAR(60) NOT NULL,
+    username VARCHAR(30) NOT NULL,
+    clave_hash VARCHAR(255) NOT NULL,
+    id_rol INT NOT NULL,
+    id_area INT NOT NULL,
+    estado BIT NOT NULL DEFAULT 1,
+    CONSTRAINT PK_USUARIO PRIMARY KEY (id_usuario),
+    CONSTRAINT UQ_USUARIO_DNI UNIQUE (dni),
+    CONSTRAINT UQ_USUARIO_USER UNIQUE (username),
+    CONSTRAINT FK_USUARIO_ROL FOREIGN KEY (id_rol) REFERENCES ROL(id_rol),
+    CONSTRAINT FK_USUARIO_AREA FOREIGN KEY (id_area) REFERENCES AREA(id_area)
+);
+
+CREATE TABLE EXPEDIENTE (
+    nro_expediente CHAR(12) NOT NULL, -- Ej. EXP-2026-0001
+    fecha_registro DATETIME NOT NULL DEFAULT GETDATE(),
+    asunto VARCHAR(250) NOT NULL,
+    folios INT NOT NULL DEFAULT 1,
+    ruta_pdf VARCHAR(255) NULL,
+    estado_actual VARCHAR(25) NOT NULL DEFAULT 'REGISTRADO',
+    id_solicitante INT NOT NULL,
+    id_tipodoc INT NOT NULL,
+    id_usuario_reg INT NOT NULL,
+    CONSTRAINT PK_EXPEDIENTE PRIMARY KEY (nro_expediente),
+    CONSTRAINT CK_EXPEDIENTE_FOLIOS CHECK (folios > 0),
+    CONSTRAINT CK_EXPEDIENTE_ESTADO CHECK (estado_actual IN ('REGISTRADO', 'EN_TRAMITE', 'OBSERVADO', 'ATENDIDO', 'ARCHIVADO')),
+    CONSTRAINT FK_EXPEDIENTE_SOLICITANTE FOREIGN KEY (id_solicitante) REFERENCES SOLICITANTE(id_solicitante),
+    CONSTRAINT FK_EXPEDIENTE_TIPODOC FOREIGN KEY (id_tipodoc) REFERENCES TIPO_DOCUMENTO(id_tipodoc),
+    CONSTRAINT FK_EXPEDIENTE_USUARIO FOREIGN KEY (id_usuario_reg) REFERENCES USUARIO(id_usuario)
+);
+
+-- 3. Entidad Débil: Historial de Derivaciones y Trazabilidad
+CREATE TABLE MOVIMIENTO (
+    nro_expediente CHAR(12) NOT NULL,
+    nro_mov INT NOT NULL,
+    fecha_mov DATETIME NOT NULL DEFAULT GETDATE(),
+    id_area_destino INT NOT NULL,
+    id_usuario_atiende INT NOT NULL,
+    proveido VARCHAR(300) NOT NULL,
+    estado_mov VARCHAR(25) NOT NULL DEFAULT 'DERIVADO',
+    CONSTRAINT PK_MOVIMIENTO PRIMARY KEY (nro_expediente, nro_mov),
+    CONSTRAINT FK_MOVIMIENTO_EXPEDIENTE FOREIGN KEY (nro_expediente) REFERENCES EXPEDIENTE(nro_expediente),
+    CONSTRAINT FK_MOVIMIENTO_AREA FOREIGN KEY (id_area_destino) REFERENCES AREA(id_area),
+    CONSTRAINT FK_MOVIMIENTO_USUARIO FOREIGN KEY (id_usuario_atiende) REFERENCES USUARIO(id_usuario)
+);
+GO

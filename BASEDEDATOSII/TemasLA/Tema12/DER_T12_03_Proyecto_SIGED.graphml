@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:java="http://www.yworks.com/xml/yfiles-common/1.0/java" xmlns:sys="http://www.yworks.com/xml/yfiles-common/markup/primitives/2.0" xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
+  <key for="port" id="d0" yfiles.type="portgraphics"/>
+  <key for="port" id="d1" yfiles.type="portgeometry"/>
+  <key for="port" id="d2" yfiles.type="portuserdata"/>
+  <key attr.name="url" attr.type="string" for="node" id="d3"/>
+  <key attr.name="description" attr.type="string" for="node" id="d4"/>
+  <key for="node" id="d5" yfiles.type="nodegraphics"/>
+  <key for="graphml" id="d6" yfiles.type="resources"/>
+  <key attr.name="url" attr.type="string" for="edge" id="d7"/>
+  <key attr.name="description" attr.type="string" for="edge" id="d8"/>
+  <key for="edge" id="d9" yfiles.type="edgegraphics"/>
+  <graph edgedefault="undirected" id="G">
+
+    <!-- ENTIDADES -->
+    <node id="ns_rol"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="42.0" width="120.0" x="80.0" y="100.0"/><y:Fill color="#3B82F6"/><y:BorderStyle color="#1D4ED8" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">ROL</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+    <node id="ns_usu"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="42.0" width="120.0" x="80.0" y="300.0"/><y:Fill color="#3B82F6"/><y:BorderStyle color="#1D4ED8" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">USUARIO</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+    <node id="ns_area"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="42.0" width="120.0" x="80.0" y="480.0"/><y:Fill color="#3B82F6"/><y:BorderStyle color="#1D4ED8" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">AREA</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+    <node id="ns_sol"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="42.0" width="130.0" x="380.0" y="100.0"/><y:Fill color="#3B82F6"/><y:BorderStyle color="#1D4ED8" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">SOLICITANTE</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+    <node id="ns_tip"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="42.0" width="130.0" x="680.0" y="100.0"/><y:Fill color="#3B82F6"/><y:BorderStyle color="#1D4ED8" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">TIPO_DOCUMENTO</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+    <node id="ns_exp"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="42.0" width="130.0" x="380.0" y="300.0"/><y:Fill color="#FB923C"/><y:BorderStyle color="#C2410C" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#431407">EXPEDIENTE</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+    <node id="ns_mov"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="42.0" width="135.0" x="377.5" y="480.0"/><y:Fill color="#FEE2E2"/><y:BorderStyle color="#B91C1C" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#991B1B">MOVIMIENTO (Débil)</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+
+    <!-- RELACIONES -->
+    <node id="rs_tiene"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="40.0" width="76.0" x="102.0" y="200.0"/><y:Fill color="#E0E7FF"/><y:BorderStyle color="#4338CA" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">Tiene</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+    <node id="rs_pert"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="40.0" width="76.0" x="102.0" y="390.0"/><y:Fill color="#E0E7FF"/><y:BorderStyle color="#4338CA" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">Pertenece</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+    <node id="rs_presenta"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="40.0" width="76.0" x="407.0" y="200.0"/><y:Fill color="#E0E7FF"/><y:BorderStyle color="#4338CA" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">Presenta</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+    <node id="rs_clasifica"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="40.0" width="76.0" x="565.0" y="200.0"/><y:Fill color="#E0E7FF"/><y:BorderStyle color="#4338CA" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">Clasifica</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+    <node id="rs_registra"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="40.0" width="76.0" x="255.0" y="301.0"/><y:Fill color="#E0E7FF"/><y:BorderStyle color="#4338CA" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">Registra</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+    <node id="rs_genera"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="40.0" width="76.0" x="407.0" y="390.0"/><y:Fill color="#FEE2E2"/><y:BorderStyle color="#B91C1C" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold" textColor="#991B1B">Genera</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+    <node id="rs_deriva"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="40.0" width="76.0" x="255.0" y="481.0"/><y:Fill color="#E0E7FF"/><y:BorderStyle color="#4338CA" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">Deriva_A</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+
+    <!-- ATRIBUTOS PK -->
+    <node id="as_rol_pk"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="65.0" x="107.5" y="45.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">id_rol</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="as_usu_pk"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="75.0" x="0.0" y="309.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">id_usuario</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="as_are_pk"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="65.0" x="107.5" y="550.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">id_area</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="as_sol_pk"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="85.0" x="402.5" y="45.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">id_solicitante</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="as_tip_pk"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="75.0" x="707.5" y="45.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">id_tipodoc</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="as_exp_pk"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="90.0" x="545.0" y="309.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">nro_expediente</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="as_mov_pk"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="75.0" x="407.5" y="550.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#B91C1C" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">#nro_mov</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+
+    <!-- ARISTAS -->
+    <edge id="es1" source="ns_rol" target="rs_tiene"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="es2" source="rs_tiene" target="ns_usu"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="es3" source="ns_area" target="rs_pert"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="es4" source="rs_pert" target="ns_usu"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="es5" source="ns_sol" target="rs_presenta"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="es6" source="rs_presenta" target="ns_exp"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="es7" source="ns_tip" target="rs_clasifica"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="es8" source="rs_clasifica" target="ns_exp"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="es9" source="ns_usu" target="rs_registra"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="es10" source="rs_registra" target="ns_exp"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="es11" source="ns_exp" target="rs_genera"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#B91C1C" width="1.5"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="es12" source="rs_genera" target="ns_mov"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#B91C1C" width="1.5"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="es13" source="ns_area" target="rs_deriva"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="es14" source="rs_deriva" target="ns_mov"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+
+    <!-- CONEXIONES ATRIBUTOS -->
+    <edge id="eas1" source="ns_rol" target="as_rol_pk"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eas2" source="ns_usu" target="as_usu_pk"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eas3" source="ns_area" target="as_are_pk"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eas4" source="ns_sol" target="as_sol_pk"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eas5" source="ns_tip" target="as_tip_pk"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eas6" source="ns_exp" target="as_exp_pk"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eas7" source="ns_mov" target="as_mov_pk"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+
+  </graph>
+  <data key="d6"><y:Resources/></data>
+</graphml>

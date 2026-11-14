@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:java="http://www.yworks.com/xml/yfiles-common/1.0/java" xmlns:sys="http://www.yworks.com/xml/yfiles-common/markup/primitives/2.0" xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
+  <key for="port" id="d0" yfiles.type="portgraphics"/>
+  <key for="port" id="d1" yfiles.type="portgeometry"/>
+  <key for="port" id="d2" yfiles.type="portuserdata"/>
+  <key attr.name="url" attr.type="string" for="node" id="d3"/>
+  <key attr.name="description" attr.type="string" for="node" id="d4"/>
+  <key for="node" id="d5" yfiles.type="nodegraphics"/>
+  <key for="graphml" id="d6" yfiles.type="resources"/>
+  <key attr.name="url" attr.type="string" for="edge" id="d7"/>
+  <key attr.name="description" attr.type="string" for="edge" id="d8"/>
+  <key for="edge" id="d9" yfiles.type="edgegraphics"/>
+  <graph edgedefault="undirected" id="G">
+
+    <!-- ENTIDADES -->
+    <node id="nd_brev"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="42.0" width="120.0" x="150.0" y="380.0"/><y:Fill color="#3B82F6"/><y:BorderStyle color="#1D4ED8" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">BREVETE</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+    <node id="nd_rep"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="42.0" width="130.0" x="145.0" y="160.0"/><y:Fill color="#3B82F6"/><y:BorderStyle color="#1D4ED8" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">REPARTIDOR</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+    <node id="nd_ped"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="42.0" width="120.0" x="450.0" y="160.0"/><y:Fill color="#3B82F6"/><y:BorderStyle color="#1D4ED8" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">PEDIDO</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+    <node id="nd_des"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="42.0" width="120.0" x="450.0" y="380.0"/><y:Fill color="#3B82F6"/><y:BorderStyle color="#1D4ED8" width="2.0"/><y:NodeLabel fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">DESAYUNO</y:NodeLabel><y:Shape type="rectangle"/></y:ShapeNode></data></node>
+
+    <!-- RELACIONES -->
+    <node id="rd_posee"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="44.0" width="76.0" x="172.0" y="270.0"/><y:Fill color="#E0E7FF"/><y:BorderStyle color="#4338CA" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="11" fontStyle="bold">Posee</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+    <node id="rd_atiende"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="44.0" width="76.0" x="325.0" y="159.0"/><y:Fill color="#E0E7FF"/><y:BorderStyle color="#4338CA" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="11" fontStyle="bold">Atiende</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+    <node id="rd_detalle"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="46.0" width="84.0" x="468.0" y="269.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#CA8A04" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">Detalle_Ped</y:NodeLabel><y:Shape type="diamond"/></y:ShapeNode></data></node>
+
+    <!-- ATRIBUTOS -->
+    <node id="ad_br_cod"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="75.0" x="100.0" y="450.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">COD_BREV</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="ad_br_des"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="75.0" x="190.0" y="450.0"/><y:Fill color="#FFFFFF"/><y:BorderStyle color="#64748B"/><y:NodeLabel fontFamily="Arial" fontSize="10">DES_BREV</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+
+    <node id="ad_rp_cod"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="70.0" x="70.0" y="90.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">COD_REP</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="ad_rp_nom"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="75.0" x="150.0" y="90.0"/><y:Fill color="#FFFFFF"/><y:BorderStyle color="#64748B"/><y:NodeLabel fontFamily="Arial" fontSize="10">NOM_REP</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="ad_rp_dni"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="70.0" x="235.0" y="90.0"/><y:Fill color="#FFFFFF"/><y:BorderStyle color="#64748B"/><y:NodeLabel fontFamily="Arial" fontSize="10">DNI_REP</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+
+    <node id="ad_pd_cod"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="70.0" x="420.0" y="90.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">COD_PED</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="ad_pd_fec"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="70.0" x="505.0" y="90.0"/><y:Fill color="#FFFFFF"/><y:BorderStyle color="#64748B"/><y:NodeLabel fontFamily="Arial" fontSize="10">FEC_PED</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="ad_pd_est"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="65.0" x="585.0" y="90.0"/><y:Fill color="#FFFFFF"/><y:BorderStyle color="#64748B"/><y:NodeLabel fontFamily="Arial" fontSize="10">EST_PED</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+
+    <node id="ad_dt_can"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="70.0" x="575.0" y="265.0"/><y:Fill color="#FFFFFF"/><y:BorderStyle color="#64748B"/><y:NodeLabel fontFamily="Arial" fontSize="10">CANTIDAD</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="ad_dt_pre"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="80.0" x="575.0" y="295.0"/><y:Fill color="#FFFFFF"/><y:BorderStyle color="#64748B"/><y:NodeLabel fontFamily="Arial" fontSize="10">PRECIO_DES</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+
+    <node id="ad_ds_cod"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="70.0" x="410.0" y="450.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="10" fontStyle="bold">COD_DES</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="ad_ds_des"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="75.0" x="490.0" y="450.0"/><y:Fill color="#FFFFFF"/><y:BorderStyle color="#64748B"/><y:NodeLabel fontFamily="Arial" fontSize="10">DESC_DES</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="ad_ds_pre"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="80.0" x="575.0" y="450.0"/><y:Fill color="#FFFFFF"/><y:BorderStyle color="#64748B"/><y:NodeLabel fontFamily="Arial" fontSize="10">PRECIO_DES</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+
+    <!-- ARISTAS -->
+    <edge id="ed1" source="nd_brev" target="rd_posee"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ed2" source="rd_posee" target="nd_rep"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ed3" source="nd_rep" target="rd_atiende"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ed4" source="rd_atiende" target="nd_ped"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ed5" source="nd_ped" target="rd_detalle"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ed6" source="rd_detalle" target="nd_des"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">M</y:EdgeLabel></y:PolyLineEdge></data></edge>
+
+    <!-- CONEXIONES ATRIBUTOS -->
+    <edge id="ead1" source="nd_brev" target="ad_br_cod"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="ead2" source="nd_brev" target="ad_br_des"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="ead3" source="nd_rep" target="ad_rp_cod"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="ead4" source="nd_rep" target="ad_rp_nom"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="ead5" source="nd_rep" target="ad_rp_dni"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="ead6" source="nd_ped" target="ad_pd_cod"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="ead7" source="nd_ped" target="ad_pd_fec"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="ead8" source="nd_ped" target="ad_pd_est"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="ead9" source="rd_detalle" target="ad_dt_can"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="ead10" source="rd_detalle" target="ad_dt_pre"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="ead11" source="nd_des" target="ad_ds_cod"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="ead12" source="nd_des" target="ad_ds_des"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="ead13" source="nd_des" target="ad_ds_pre"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+
+  </graph>
+  <data key="d6"><y:Resources/></data>
+</graphml>
