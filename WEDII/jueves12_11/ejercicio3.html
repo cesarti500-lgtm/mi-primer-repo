@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Solución de 5 Ejercicios de Eventos</title>
+  <script src="misFunciones3.js" defer></script>
+</head>
+<body>
+
+  <!-- EJERCICIO 1: Interruptor de luz -->
+  <section>
+    <h2 id="tituloLuz">La habitación está oscura</h2>
+    <div id="cuadroLuz" style="width: 200px; height: 200px; background-color: black; border: 1px solid #333;"></div>
+    <br>
+    <button id="btnLuz">Encender luz</button>
+  </section>
+  <hr>
+
+  <!-- EJERCICIO 2: Conversor de moneda en tiempo real -->
+  <section>
+    <h2>Conversor de Dólares a Soles</h2>
+    <input type="number" id="inputDolares" placeholder="Monto en USD" step="0.01">
+    <p id="resultadoSoles">0.00 soles</p>
+  </section>
+  <hr>
+
+  <!-- EJERCICIO 3: Mostrar y ocultar contraseña -->
+  <section>
+    <h2>Ver contraseña al mantener clic</h2>
+    <input type="password" id="inputClave" placeholder="Escribe tu contraseña">
+    <button id="btnVerClave" type="button">Mantener presionado para ver</button>
+  </section>
+  <hr>
+
+  <!-- EJERCICIO 4: Calculadora de total de compra -->
+  <section>
+    <h2>Selecciona tus productos</h2>
+    <label><input type="checkbox" class="producto" value="80"> Teclado (S/ 80)</label><br>
+    <label><input type="checkbox" class="producto" value="45"> Ratón (S/ 45)</label><br>
+    <label><input type="checkbox" class="producto" value="120"> Audífonos (S/ 120)</label>
+    <p id="totalCompra">Total a pagar: S/ 0</p>
+  </section>
+  <hr>
+
+</body>
+</html>
