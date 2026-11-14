@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:java="http://www.yworks.com/xml/yfiles-common/1.0/java" xmlns:sys="http://www.yworks.com/xml/yfiles-common/markup/primitives/2.0" xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
+  <key for="port" id="d0" yfiles.type="portgraphics"/>
+  <key for="port" id="d1" yfiles.type="portgeometry"/>
+  <key for="port" id="d2" yfiles.type="portuserdata"/>
+  <key attr.name="url" attr.type="string" for="node" id="d3"/>
+  <key attr.name="description" attr.type="string" for="node" id="d4"/>
+  <key for="node" id="d5" yfiles.type="nodegraphics"/>
+  <key for="graphml" id="d6" yfiles.type="resources"/>
+  <key attr.name="url" attr.type="string" for="edge" id="d7"/>
+  <key attr.name="description" attr.type="string" for="edge" id="d8"/>
+  <key for="edge" id="d9" yfiles.type="edgegraphics"/>
+  <graph edgedefault="undirected" id="G">
+
+    <!-- ==================== ENTIDADES ==================== -->
+    <!-- PROYECTO -->
+    <node id="nc_proyecto">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="42.0" width="130.0" x="100.0" y="80.0"/>
+          <y:Fill color="#3B82F6" transparent="false"/>
+          <y:BorderStyle color="#1D4ED8" type="line" width="2.0"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">PROYECTO</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+
+    <!-- OBRA -->
+    <node id="nc_obra">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="42.0" width="120.0" x="380.0" y="80.0"/>
+          <y:Fill color="#3B82F6" transparent="false"/>
+          <y:BorderStyle color="#1D4ED8" type="line" width="2.0"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">OBRA</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+
+    <!-- PERSONAL -->
+    <node id="nc_personal">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="42.0" width="130.0" x="100.0" y="270.0"/>
+          <y:Fill color="#3B82F6" transparent="false"/>
+          <y:BorderStyle color="#1D4ED8" type="line" width="2.0"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">PERSONAL</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+
+    <!-- MAQUINA -->
+    <node id="nc_maquina">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="42.0" width="130.0" x="650.0" y="80.0"/>
+          <y:Fill color="#3B82F6" transparent="false"/>
+          <y:BorderStyle color="#1D4ED8" type="line" width="2.0"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">MAQUINA</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+
+    <!-- Triángulo ISA Maquina -->
+    <node id="tric_maquina">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="26.0" width="30.0" x="700.0" y="145.0"/>
+          <y:Fill color="#EAB308" transparent="false"/>
+          <y:BorderStyle color="#A16207" type="line" width="1.5"/>
+          <y:Shape type="triangle2"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="nc_maq_propia">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="35.0" width="115.0" x="590.0" y="200.0"/>
+          <y:Fill color="#22C55E" transparent="false"/>
+          <y:BorderStyle color="#15803D" type="line" width="1.5"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#052E16">Maquina_Propia</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="nc_maq_alquilada">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="35.0" width="125.0" x="730.0" y="200.0"/>
+          <y:Fill color="#22C55E" transparent="false"/>
+          <y:BorderStyle color="#15803D" type="line" width="1.5"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#052E16">Maquina_Alquilada</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+
+    <!-- TEAM EXTERNO -->
+    <node id="nc_team">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="42.0" width="130.0" x="375.0" y="270.0"/>
+          <y:Fill color="#FB923C" transparent="false"/>
+          <y:BorderStyle color="#C2410C" type="line" width="2.0"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#431407">TEAM_EXTERNO</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+
+    <!-- PROVEEDOR -->
+    <node id="nc_proveedor">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="42.0" width="120.0" x="950.0" y="200.0"/>
+          <y:Fill color="#3B82F6" transparent="false"/>
+          <y:BorderStyle color="#1D4ED8" type="line" width="2.0"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#FFFFFF">PROVEEDOR</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+
+    <!-- FUNCION -->
+    <node id="nc_funcion">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="42.0" width="110.0" x="737.5" y="340.0"/>
+          <y:Fill color="#60A5FA" transparent="false"/>
+          <y:BorderStyle color="#1D4ED8" type="line" width="2.0"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="12" fontStyle="bold" textColor="#0F172A">FUNCION</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+
+    <!-- ==================== RELACIONES ==================== -->
+    <node id="rc_involucra">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="40.0" width="76.0" x="265.0" y="81.0"/>
+          <y:Fill color="#E0E7FF" transparent="false"/>
+          <y:BorderStyle color="#4338CA" type="line" width="1.5"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="10" fontStyle="bold" textColor="#1E1B4B">Involucra</y:NodeLabel>
+          <y:Shape type="diamond"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+
+    <node id="rc_asignado">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="40.0" width="76.0" x="127.0" y="175.0"/>
+          <y:Fill color="#E0E7FF" transparent="false"/>
+          <y:BorderStyle color="#4338CA" type="line" width="1.5"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="10" fontStyle="bold" textColor="#1E1B4B">Asignado</y:NodeLabel>
+          <y:Shape type="diamond"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+
+    <node id="rc_jefe">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="40.0" width="76.0" x="127.0" y="360.0"/>
+          <y:Fill color="#FEF08A" transparent="false"/>
+          <y:BorderStyle color="#CA8A04" type="line" width="1.5"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="10" fontStyle="bold" textColor="#854D0E">Es_Jefe</y:NodeLabel>
+          <y:Shape type="diamond"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+
+    <node id="rc_asig_prop">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="40.0" width="76.0" x="515.0" y="140.0"/>
+          <y:Fill color="#E0E7FF" transparent="false"/>
+          <y:BorderStyle color="#4338CA" type="line" width="1.5"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="10" fontStyle="bold" textColor="#1E1B4B">Asigna_Propia</y:NodeLabel>
+          <y:Shape type="diamond"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+
+    <node id="rc_req_team">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="40.0" width="80.0" x="400.0" y="175.0"/>
+          <y:Fill color="#FEF08A" transparent="false"/>
+          <y:BorderStyle color="#CA8A04" type="line" width="1.5"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="10" fontStyle="bold" textColor="#854D0E">Requiere_Team</y:NodeLabel>
+          <y:Shape type="diamond"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+
+    <node id="rc_conforma">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="40.0" width="76.0" x="560.0" y="271.0"/>
+          <y:Fill color="#E0E7FF" transparent="false"/>
+          <y:BorderStyle color="#4338CA" type="line" width="1.5"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="10" fontStyle="bold" textColor="#1E1B4B">Conforma</y:NodeLabel>
+          <y:Shape type="diamond"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+
+    <node id="rc_provee">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="40.0" width="76.0" x="870.0" y="198.0"/>
+          <y:Fill color="#E0E7FF" transparent="false"/>
+          <y:BorderStyle color="#4338CA" type="line" width="1.5"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="10" fontStyle="bold" textColor="#1E1B4B">Provee</y:NodeLabel>
+          <y:Shape type="diamond"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+
+    <node id="rc_cumple">
+      <data key="d4"/>
+      <data key="d5">
+        <y:ShapeNode>
+          <y:Geometry height="40.0" width="76.0" x="755.0" y="271.0"/>
+          <y:Fill color="#E0E7FF" transparent="false"/>
+          <y:BorderStyle color="#4338CA" type="line" width="1.5"/>
+          <y:NodeLabel alignment="center" fontFamily="Arial" fontSize="10" fontStyle="bold" textColor="#1E1B4B">Cumple</y:NodeLabel>
+          <y:Shape type="diamond"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+
+    <!-- ==================== ATRIBUTOS ==================== -->
+    <node id="atc_proy_num"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="85.0" x="30.0" y="30.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">num_proyecto</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="atc_proy_etapas"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="80.0" x="125.0" y="30.0"/><y:Fill color="#FFFFFF"/><y:BorderStyle color="#64748B"/><y:NodeLabel fontFamily="Arial" fontSize="9">num_etapas</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+
+    <node id="atc_obra_cod"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="75.0" x="402.0" y="30.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">cod_obra</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+
+    <node id="atc_per_cod"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="85.0" x="0.0" y="279.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">cod_empleado</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="atc_per_dni"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="60.0" x="15.0" y="310.0"/><y:Fill color="#FFFFFF"/><y:BorderStyle color="#64748B"/><y:NodeLabel fontFamily="Arial" fontSize="9">dni</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+
+    <node id="atc_maq_cod"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="85.0" x="672.0" y="30.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">cod_maquina</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+
+    <node id="atc_team_cod"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="75.0" x="300.0" y="340.0"/><y:Fill color="#FEF08A"/><y:BorderStyle color="#0F172A" width="1.5"/><y:NodeLabel fontFamily="Arial" fontSize="9" fontStyle="bold">cod_team</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="atc_team_fec"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="85.0" x="385.0" y="340.0"/><y:Fill color="#FFFFFF"/><y:BorderStyle color="#64748B"/><y:NodeLabel fontFamily="Arial" fontSize="9">fec_conforma</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+
+    <!-- Atributos de la Relación Requiere_Team -->
+    <node id="atc_rt_monto"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="65.0" x="495.0" y="170.0"/><y:Fill color="#FFFFFF"/><y:BorderStyle color="#64748B"/><y:NodeLabel fontFamily="Arial" fontSize="9">monto</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+    <node id="atc_rt_fini"><data key="d4"/><data key="d5"><y:ShapeNode><y:Geometry height="24.0" width="75.0" x="495.0" y="200.0"/><y:Fill color="#FFFFFF"/><y:BorderStyle color="#64748B"/><y:NodeLabel fontFamily="Arial" fontSize="9">fec_inicio</y:NodeLabel><y:Shape type="ellipse"/></y:ShapeNode></data></node>
+
+    <!-- ==================== ARISTAS ==================== -->
+    <!-- Proyecto - Obra -->
+    <edge id="ec_proy_inv" source="nc_proyecto" target="rc_involucra"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ec_inv_obr" source="rc_involucra" target="nc_obra"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+
+    <!-- Personal - Proyecto -->
+    <edge id="ec_proy_asig" source="nc_proyecto" target="rc_asignado"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ec_asig_per" source="rc_asignado" target="nc_personal"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">M</y:EdgeLabel></y:PolyLineEdge></data></edge>
+
+    <!-- Personal - Es_Jefe (Recursiva) -->
+    <edge id="ec_per_jefe1" source="nc_personal" target="rc_jefe"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ec_jefe_perN" source="rc_jefe" target="nc_personal"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:Path sx="0.0" sy="20.0" tx="40.0" ty="21.0"><y:Point x="165.0" y="420.0"/><y:Point x="60.0" y="420.0"/><y:Point x="60.0" y="291.0"/></y:Path><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+
+    <!-- Obra - Requiere_Team -->
+    <edge id="ec_obr_rt" source="nc_obra" target="rc_req_team"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ec_rt_team" source="rc_req_team" target="nc_team"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">M</y:EdgeLabel></y:PolyLineEdge></data></edge>
+
+    <!-- Obra - Maquina Propia -->
+    <edge id="ec_obr_aprop" source="nc_obra" target="rc_asig_prop"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ec_aprop_mprop" source="rc_asig_prop" target="nc_maq_propia"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">M</y:EdgeLabel></y:PolyLineEdge></data></edge>
+
+    <!-- Maquina - ISA -->
+    <edge id="ehc_maq_tri" source="nc_maquina" target="tric_maquina"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.5"/></y:PolyLineEdge></data></edge>
+    <edge id="ehc_tri_mprop" source="tric_maquina" target="nc_maq_propia"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.5"/></y:PolyLineEdge></data></edge>
+    <edge id="ehc_tri_malq" source="tric_maquina" target="nc_maq_alquilada"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.5"/></y:PolyLineEdge></data></edge>
+
+    <!-- Maquina Alquilada - Team Externo -->
+    <edge id="ec_malq_conf" source="nc_maq_alquilada" target="rc_conforma"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ec_conf_team" source="rc_conforma" target="nc_team"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">M</y:EdgeLabel></y:PolyLineEdge></data></edge>
+
+    <!-- Proveedor - Maquina Alquilada -->
+    <edge id="ec_prv_prov" source="nc_proveedor" target="rc_provee"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ec_prov_malq" source="rc_provee" target="nc_maq_alquilada"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+
+    <!-- Maquina Alquilada - Funcion -->
+    <edge id="ec_malq_cumple" source="nc_maq_alquilada" target="rc_cumple"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">N</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge id="ec_cumple_fn" source="rc_cumple" target="nc_funcion"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#000000" width="1.2"/><y:EdgeLabel fontFamily="Arial" fontSize="11" fontStyle="bold" textColor="#DC2626">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
+
+    <!-- Atributos Requiere_Team -->
+    <edge id="eac_rt1" source="rc_req_team" target="atc_rt_monto"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eac_rt2" source="rc_req_team" target="atc_rt_fini"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+
+    <!-- Atributos Básicos -->
+    <edge id="eac_p1" source="nc_proyecto" target="atc_proy_num"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eac_p2" source="nc_proyecto" target="atc_proy_etapas"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eac_o1" source="nc_obra" target="atc_obra_cod"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eac_pe1" source="nc_personal" target="atc_per_cod"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eac_pe2" source="nc_personal" target="atc_per_dni"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eac_m1" source="nc_maquina" target="atc_maq_cod"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eac_t1" source="nc_team" target="atc_team_cod"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+    <edge id="eac_t2" source="nc_team" target="atc_team_fec"><data key="d8"/><data key="d9"><y:PolyLineEdge><y:LineStyle color="#94A3B8" width="1.0"/></y:PolyLineEdge></data></edge>
+
+  </graph>
+  <data key="d6"><y:Resources/></data>
+</graphml>
