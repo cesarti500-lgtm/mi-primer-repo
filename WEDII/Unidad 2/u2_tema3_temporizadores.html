@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Unidad 2 - Temporizadores</title>
+    <style>
+        #reloj { font-size: 2rem; font-family: monospace; color: #333; }
+        .alerta { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Cronómetro / Reloj en Tiempo Real</h2>
+    <div id="reloj">00:00:00</div>
+    <p id="mensaje"></p>
+
+    <script>
+        // setInterval: Ejecución continua cada 1 segundo
+        const temporizador = setInterval(() => {
+            const ahora = new Date();
+            const horas = String(ahora.getHours()).padStart(2, '0');
+            const minutos = String(ahora.getMinutes()).padStart(2, '0');
+            const segundos = String(ahora.getSeconds()).padStart(2, '0');
+
+            document.getElementById("reloj").innerText = `${horas}:${minutos}:${segundos}`;
+        }, 1000);
+
+        // setTimeout: Ejecución diferida tras 5 segundos
+        setTimeout(() => {
+            document.getElementById("mensaje").innerHTML = 
+                '<span class="alerta">¡Han transcurrido 5 segundos desde la carga!</span>';
+        }, 5000);
+    </script>
+</body>
+</html>

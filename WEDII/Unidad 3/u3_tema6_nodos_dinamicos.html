@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Unidad 3 - Manipulación de Nodos</title>
+    <style>
+        .item-lista {
+            padding: 8px 12px;
+            margin: 4px 0;
+            background-color: #f0f0f0;
+            border-left: 4px solid #007bff;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn-eliminar { color: red; cursor: pointer; border: none; background: none; }
+    </style>
+</head>
+<body>
+    <h2>Lista Dinámica de Tareas</h2>
+    <input type="text" id="txtTarea" placeholder="Nueva tarea...">
+    <button onclick="agregarTarea()">Agregar Tarea</button>
+
+    <div id="contenedorLista">
+        <ul id="listaTareas"></ul>
+    </div>
+
+    <script>
+        function agregarTarea() {
+            const input = document.getElementById("txtTarea");
+            const texto = input.value.trim();
+
+            if (texto === "") {
+                alert("Por favor, ingrese un texto válido.");
+                return;
+            }
+
+            const ul = document.getElementById("listaTareas");
+
+            // Crear elemento <li>
+            const nuevoLi = document.createElement("li");
+            nuevoLi.className = "item-lista";
+
+            // Contenido interno del nodo
+            nuevoLi.innerHTML = `
+                <span>${texto}</span>
+                <button class="btn-eliminar" onclick="eliminarNodo(this)">X</button>
+            `;
+
+            // Insertar nodo hijo (appendChild)
+            ul.appendChild(nuevoLi);
+
+            // Limpiar caja de texto
+            input.value = "";
+        }
+
+        function eliminarNodo(boton) {
+            // Acceso al nodo padre a través de parentNode
+            const liAEliminar = boton.parentNode;
+            const ulPadre = liAEliminar.parentNode;
+
+            // Eliminar hijo (removeChild)
+            ulPadre.removeChild(liAEliminar);
+        }
+    </script>
+</body>
+</html>

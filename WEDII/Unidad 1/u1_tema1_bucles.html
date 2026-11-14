@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Unidad 1 - Bucles</title>
+</head>
+<body>
+    <h2>Tabla de Multiplicar y Listado</h2>
+    <div id="tabla"></div>
+
+    <script>
+        let numero = 7;
+        let contenido = `<h3>Tabla del ${numero}</h3><ul>`;
+
+        // Bucle FOR
+        for (let i = 1; i <= 10; i++) {
+            contenido += `<li>${numero} x ${i} = ${numero * i}</li>`;
+        }
+        contenido += "</ul>";
+
+        // Bucle WHILE: Contador regresivo
+        let contador = 5;
+        contenido += "<h3>Cuenta Regresiva (While):</h3>";
+        while (contador > 0) {
+            contenido += `${contador}... `;
+            contador--;
+        }
+
+        document.getElementById("tabla").innerHTML = contenido;
+    </script>
+</body>
+</html>

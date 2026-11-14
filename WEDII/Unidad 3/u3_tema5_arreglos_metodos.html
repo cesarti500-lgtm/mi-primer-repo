@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Unidad 3 - Operaciones con Arreglos</title>
+</head>
+<body>
+    <h2>Gestión de Productos</h2>
+    <div id="app"></div>
+
+    <script>
+        // Declaración de arreglo de objetos
+        let productos = [
+            { id: 1, nombre: "Laptop", precio: 2500, categoria: "Tecnología" },
+            { id: 2, nombre: "Mouse", precio: 50, categoria: "Tecnología" },
+            { id: 3, nombre: "Escritorio", precio: 450, categoria: "Muebles" },
+            { id: 4, nombre: "Teclado", precio: 120, categoria: "Tecnología" }
+        ];
+
+        // 1. Agregar nuevo elemento (push)
+        productos.push({ id: 5, nombre: "Silla Gamer", precio: 600, categoria: "Muebles" });
+
+        // 2. Filtrar elementos con precio > 100 (filter)
+        const productosCostosos = productos.filter(p => p.precio > 100);
+
+        // 3. Transformar elementos para obtener nombres formateados (map)
+        const nombresFormateados = productos.map(p => `PRODUCTO: ${p.nombre.toUpperCase()}`);
+
+        // Renderizado dinámico recorriendo con forEach
+        let html = "<h3>Productos Filtrados (Precio > S/ 100):</h3><ul>";
+        productosCostosos.forEach(p => {
+            html += `<li><strong>${p.nombre}</strong> - S/ ${p.precio} (${p.categoria})</li>`;
+        });
+        html += "</ul>";
+
+        document.getElementById("app").innerHTML = html;
+    </script>
+</body>
+</html>

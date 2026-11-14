@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Unidad 2 - Manejo de Eventos</title>
+    <style>
+        .caja-evento {
+            width: 200px;
+            height: 100px;
+            background-color: lightgray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Captura de Eventos DOM</h2>
+
+    <button id="btnSaludar">Hacer Clic Aquí</button>
+    <input type="text" id="inputNombre" placeholder="Escribe tu nombre...">
+    
+    <div id="cajaRaton" class="caja-evento">Pasa el mouse aquí</div>
+    <p id="registro"></p>
+
+    <script>
+        const btn = document.getElementById("btnSaludar");
+        const input = document.getElementById("inputNombre");
+        const caja = document.getElementById("cajaRaton");
+        const registro = document.getElementById("registro");
+
+        // Evento Click con addEventListener
+        btn.addEventListener("click", () => {
+            alert(`¡Hola ${input.value || 'Invitado'}!`);
+        });
+
+        // Evento Input (Keyup/Input)
+        input.addEventListener("input", (e) => {
+            registro.innerText = `Escribiendo: ${e.target.value}`;
+        });
+
+        // Eventos Mouseover y Mouseout
+        caja.addEventListener("mouseover", () => {
+            caja.style.backgroundColor = "#81c784";
+            caja.innerText = "¡Mouse Encima!";
+        });
+
+        caja.addEventListener("mouseout", () => {
+            caja.style.backgroundColor = "lightgray";
+            caja.innerText = "Pasa el mouse aquí";
+        });
+    </script>
+</body>
+</html>
+
